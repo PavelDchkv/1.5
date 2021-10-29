@@ -190,8 +190,8 @@ body {
     .brand-swiper::after {
         content: none;
     }
-
-    .brand-swiper__wrapper {
+/* Это прошлое решение на flex
+     .brand-swiper__wrapper {
         box-sizing: border-box;
         display: flex;
         flex-wrap: wrap;
@@ -209,8 +209,26 @@ body {
         flex-grow: 1;
         /*box-sizing: border-box;*/
         margin: 0 24px 16px 0;
+    } */
+
+    .brand-swiper__wrapper {
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(248px, 1fr));
+        height: auto;
+        max-height: 200px;
+
+        padding: 24px 0 0 24px;
+
+        transition: max-height 0.5s;
     }
 
+    .brand-swiper__slide {
+        width: auto;
+        max-width: 303px;
+        margin: 0 24px 16px 0;
+    }
+    
     .button-showmore {
         display: block;
         position: relative;
