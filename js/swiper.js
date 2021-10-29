@@ -66,14 +66,14 @@ button.addEventListener('click', function () {
     if (!isActiveButton) {
         block.style.maxHeight = '500px';
         // setTimeout( () => text.innerHTML = 'Скрыть', 150);
-        text.innerHTML = 'Скрыть'
+        text.textContent = 'Скрыть'
         isActiveButton = true;
         button.classList.add('rotate');
     } else {
         block.style.maxHeight = '200px';
         isActiveButton = false;
         // setTimeout(() => text.innerHTML = 'Показать все', 200);
-        text.innerHTML = 'Показать все';
+        text.textContent = 'Показать все';
         button.classList.remove('rotate');
     }
 });
