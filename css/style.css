@@ -1,0 +1,241 @@
+/*Обнуление стилей.*/
+:focus,
+:active {
+    outline: none;
+}
+a:focus,
+a:active {
+    outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+    display: block;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+a, a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+a:hover {
+    text-decoration: none;
+}
+ul li {
+    list-style: none;
+}
+img {
+    vertical-align: top;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+/*Моя цсс здесь берет начало*/
+@font-face {
+    font-family: 'TT Lakes';
+    src: local('TT Lakes Regular'), local('TTLakes-Regular'),
+    url('../fonts/TTLakes-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'TT Lakes';
+    src: local('TT Lakes Bold'), local('TTLakes-Bold'),
+    url('../fonts/TTLakes-Bold.woff') format('woff');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'TT Lakes';
+    src: local('TT Lakes Medium'), local('TTLakes-Medium'),
+    url('../fonts/TTLakes-Medium.woff') format('woff');
+    font-weight: 500;
+}
+
+body {
+    font-family: "TT Lakes";
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    color: #1B1C21;
+    background-color: #F8F8F8;
+}
+
+.wrapper-brand {
+    position: relative;
+}
+
+.swiper-title {
+    font-size: 16px;
+    font-weight: normal;
+    color: #7E7E82;
+    text-transform: uppercase;
+
+    padding: 16px;
+    background: linear-gradient(90deg, #F8F8F8 0%, #FFFFFF 98.61%);
+
+    border-top: 1px solid #D9FFF5;
+}
+
+.brand-swiper {
+    position: relative;
+    overflow: hidden;
+}
+
+/*.bramd-swiper__img {*/
+/*    height: 108px;*/
+/*    width: 32px;*/
+/*}*/
+
+.brand-swiper__slide {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 240px;
+    height: 72px;
+    box-sizing: border-box;
+
+    margin: 16px 0 66px 16px;
+    padding: 0 16px;
+
+    border-radius: 6px;
+    background-color: #FFFFFF;
+}
+
+
+
+.brand-swiper::after {
+    position: absolute;
+    content: '';
+    right: 0;
+    top: 7px;
+    z-index: 2;
+border: 2px solid tomato;
+    width: 24px;
+    height: 81px;
+    background: linear-gradient(270deg, #F8F8F8 16.84%, rgba(248, 248, 248, 0.0001) 100%);
+}
+
+.brand-swiper__button {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid #FF3E79;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+}
+
+.brand-swiper .swiper-pagination {
+    bottom: 38px;
+}
+
+.brand-swiper .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background-color: #B5B6BC;
+}
+
+.display-none {
+    display: none;
+}
+
+.button-showmore {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .brand-swiper::after {
+        content: none;
+    }
+
+    .brand-swiper__wrapper {
+        box-sizing: border-box;
+        display: flex;
+        flex-wrap: wrap;
+        height: auto;
+        max-height: 200px;
+
+        padding: 24px 0 0 24px;
+
+        transition: max-height 0.5s;
+    }
+
+    .brand-swiper__slide {
+        width: 224px;
+        max-width: 303px;
+        flex-grow: 1;
+        /*box-sizing: border-box;*/
+        margin: 0 24px 16px 0;
+    }
+
+    .button-showmore {
+        display: block;
+        position: relative;
+        margin-left: 60px;
+    }
+
+    .button-showmore__text {
+        background-color: #F8F8F8;
+        font-weight: 500;
+        font-size: 16px;
+    }
+
+    .button-showmore__text::before {
+        content: '';
+        position: absolute;
+        background-image: url("../img/show-more.svg");
+        background-repeat: no-repeat;
+        width: 8px;
+        height: 10px;
+        left: -17px;
+        top: 6px;
+        transition-duration: 0.5s;
+    }
+
+    .rotate .button-showmore__text::before {
+        transform: rotate(180deg);
+    }
+}
